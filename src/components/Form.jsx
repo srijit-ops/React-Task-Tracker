@@ -7,6 +7,13 @@ import Modalform from './Modalform';
 
 function Form(props) {
   const [show, setShow] = useState(false);
+  function disablePastDate(){
+    const today = new Date()
+    const dd = String(today.getDate()).padStart(2, "0")
+    const mm = String(today.getMonth() + 1).padStart(2, "0") //January is 0!
+    const yy = today.getFullYear()
+    return yy + "-" + mm + "-" + dd
+}
   let timeSplit, hours, minutes, meridianValue
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -60,7 +67,7 @@ function Form(props) {
         </Modal.Header>
         <Modal.Body>
           <Modalform labelText="Enter the task" dataType="text" holder="task name" addId="taskDef"></Modalform>
-          <Modalform labelText="Enter the date" dataType="date" holder="date" addId="taskDate"></Modalform>
+          <Modalform labelText="Enter the date" dataType="date" holder="date" addId="taskDate"  mindate={disablePastDate()}></Modalform>
           <Modalform labelText="Enter the time" dataType="time" holder="time" addId="taskTime"></Modalform>
         </Modal.Body>
         <Modal.Footer>
