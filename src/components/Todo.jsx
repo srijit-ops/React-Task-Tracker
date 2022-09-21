@@ -3,47 +3,6 @@ import "./style.css"
 import { toast } from 'react-toastify';    
 import 'react-toastify/dist/ReactToastify.css';    
 function Todo(props) {
-  
-  /*let timeSplit, hours, minutes, meridian, targetP
-  const timer= document.getElementById("taskTime")
-    if(timer!== null){
-      timeSplit = timer.value.split(':'),
-    
-  hours = timeSplit[0];
-  minutes = timeSplit[1];
-  if (hours > 12) {
-    meridian = 'PM';
-    hours -= 12;
-  } else if (hours < 12) {
-    meridian = 'AM';
-    if (hours == 0) {
-      hours = 12;
-    }
-  } else {
-    meridian = 'PM';
-  }
-  console.log(meridian)
-    }*/
-    /*else{
-      let test=document.getElementsByClassName("due_time")
-      let test2=(test[0].innerHTML)
-      timeSplit = test2.split(':'),
-    
-  hours = timeSplit[0];
-  minutes = timeSplit[1];
-  if (hours > 12) {
-    meridian = 'PM';
-    hours -= 12;
-  } else if (hours < 12) {
-    meridian = 'AM';
-    if (hours == 0) {
-      hours = 12;
-    }
-  } else {
-    meridian = 'PM';
-  }
-    }*/
-    
   function doneFunc(e){
     toast.success('Task marked completed successfully')
     props.setTodos(props.todos.map((item)=>{
@@ -56,11 +15,8 @@ function Todo(props) {
     const doneDiv= e.target.parentElement.parentElement
     console.log(doneDiv)
     e.target.parentElement.disabled=true
-    //doneDiv.style.opacity=0.6
     doneDiv.classList.add("taskDone")
-    /*targetP=e.target.parentNode.getElementsByClassName('taskTime')[0].innerHTML*/
   }
-  /*console.log(targetP)*/
   function delFunc(){
     toast.success('Task deleted successfully')
     props.setTodos(props.todos.filter((elem)=>{ //here we need the new array which will not have the obj we've deleted
@@ -81,7 +37,7 @@ function Todo(props) {
       borderRadius: "5px"}}>
         <li className='todo-li' style={{listStyle: "none",
     fontSize: "1.2rem"}}>{props.taskname}</li>
-        <p className='due_time' style={{fontSize: "1.2rem"}}>{props.taskTime + ":" + props.meridian}</p>
+        <p className='due_time' style={{fontSize: "1.2rem"}}>{props.taskTime + " " + props.meridian}</p>
         <p className='due_date' style={{fontSize: "1.2rem"}}>{props.taskDate}</p>
         <button className='complete_btn' onClick={doneFunc} style={{color: "green",
     background: "transparent",
