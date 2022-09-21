@@ -35,7 +35,7 @@ function App() {
         <Form setInputText={setInputText} todos={todos} setTodos={setTodos} status={status} setStatus={setStatus} />
         <Alltask inputText={inputText} todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
       </div>
-    <ToastContainer/>
+    <ToastContainer autoClose={1500}/>
     </>
   );
 }
