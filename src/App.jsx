@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify'
 
 function App() {
   const [inputText, setInputText] = useState("")
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(localStorage.getItem("todos")?JSON.parse(localStorage.getItem("todos")):[])
   const [status, setStatus] = useState("all")
   const [filteredTodos, setFilteredTodos] = useState([])
   function filterHandler() {
@@ -26,9 +26,23 @@ function App() {
         break
     }
   }
+  useEffect(()=>{
+    const localTodos= localStorage.getItem("todos")
+    console.log(localTodos)
+    if(localTodos){
+      setTodos(JSON.parse(localTodos))
+      console.log("gg")
+    }
+  },[])
   useEffect(() => {
     filterHandler()
+    localStorage.setItem("todos",JSON.stringify(todos))
   }, [todos, status])
+  useEffect(() => {
+    filterHandler()
+    localStorage.setItem("todos",JSON.stringify(todos))
+  }, [todos])
+  
   return (
     <>
       <div className="container">
