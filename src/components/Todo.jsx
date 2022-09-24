@@ -13,7 +13,6 @@ function Todo(props) {
       }
     }))
     const doneDiv= e.target.parentElement.parentElement
-    console.log(doneDiv)
     e.target.parentElement.disabled=true
     doneDiv.classList.add("taskDone")
   }
