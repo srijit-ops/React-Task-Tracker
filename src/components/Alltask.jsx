@@ -1,5 +1,6 @@
 import React from 'react'
-import Todo from "./Todo"      
+import Todo from "./Todo" 
+import "./style.css"     
 function Alltask(props) {
   return (
     <div className='todo_Container pt-5'>
@@ -10,7 +11,7 @@ function Alltask(props) {
         <h4>Done?</h4>
         <h4>Delete</h4>
       </div>
-      <ol className='todoList'>
+      <ol className='todoList px-0'>
         {
           props.filteredTodos.map((todo)=>{
             return <Todo taskname={todo.text} taskDate={todo.date} taskTime={todo.time} key={todo.id} setTodos={props.setTodos} todos={props.todos} todo={todo} meridian={todo.meridian} />

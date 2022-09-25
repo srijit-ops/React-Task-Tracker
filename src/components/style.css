@@ -6,3 +6,51 @@ p{
 .taskDone{
   opacity: 0.6;
 }
+@media(max-width:500px){
+  h4{
+    font-size: 1.2rem;
+  }
+  .list_divs{
+    padding-right: 0.5rem!important;
+    padding-left: 0.5rem!important;
+  }
+  li{
+    font-size: 1.1rem!important;
+  }
+  p{
+    font-size: 1rem!important;
+  }
+  .complete_btn , .del_btn{
+    padding: 0!important;
+  }
+  .complete_btn i{
+    font-size: 1.6rem!important;
+  }
+  .del_btn i{
+    font-size: 1.2rem!important;
+  }
+}
+@media(max-width:400px){
+  h4{
+    font-size: 1rem;
+  }
+  .list_divs{
+    padding-right: 0.5rem!important;
+    padding-left: 0.5rem!important;
+  }
+  li{
+    font-size: 1rem!important;
+  }
+  p{
+    font-size: 0.9rem!important;
+  }
+  .complete_btn , .del_btn{
+    padding: 0!important;
+  }
+  .complete_btn i{
+    font-size: 1.5rem!important;
+  }
+  .del_btn i{
+    font-size: 1.2rem!important;
+  }
+}

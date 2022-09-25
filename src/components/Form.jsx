@@ -51,7 +51,7 @@ function Form(props) {
   
   return (
     <div className='mb-5'>
-      <h2 className='mt-4' style={{ textAlign: "center" }}>Task Tracker</h2>
+      <h2 className='mt-1 mt-sm-4 mb-4 mb-sm-3 mb-md-0' style={{ textAlign: "center" }}>Task Tracker</h2>
       <select onChange={statusHandler} style={{ float: "right" }}>
         <option value="all">All tasks</option>
         <option value="completed">Completed tasks</option>
